@@ -17,7 +17,7 @@ const Admin = () =>{
     return (
         <>
         <h1>Admin</h1>
-        <section>
+        <section className="textecenter">
             <h2>Konexio</h2>
              {/* eslint-disable-next-line */}
             {messages.map((message=>{
@@ -30,7 +30,7 @@ const Admin = () =>{
                 }
             }))}
         </section>
-        <section>
+        <section className="textecenter">
             <h2>UNICEF</h2>
              {/* eslint-disable-next-line */}
             {messages.map((message=>{
@@ -43,7 +43,7 @@ const Admin = () =>{
                 }
             }))}
         </section>
-        <section>
+        <section className="textecenter">
             <h2>Les restos du coeur</h2>
              {/* eslint-disable-next-line */}
             {messages.map((message=>{

@@ -19,7 +19,7 @@ const Home = () =>{
          <>
          <h1>Nos associations</h1>
 
-         <section>
+         <section className="flex wrap s-b">
 
             {associations.map((association=>{
                 const {name,image,slug}= association

@@ -34,22 +34,24 @@ const Contact = () =>{
           })
           const response = await request.json()
           console.log(response);
+          setContent("")
+          setObject("")
     } 
 
     return (
          <>
          <h1>Contact</h1>
-         <form onSubmit={handleSubmit}>
+         <form onSubmit={handleSubmit} className="flex clmn g-20 aic">
             <label htmlFor="object">Objet</label>
-            <input type="text" name="object" onChange={handleObjectChange}/>
+            <input type="text" name="object" className="w-250" value={object} onChange={handleObjectChange}/>
             <label htmlFor="content">message</label>
-            <input type="text" name="content" onChange={handleContentChange}/>
-            <select onChange={handleAssociationChange}>
+            <textarea name="content" className="w-250 h-200" value={content} onChange={handleContentChange}/>
+            <select onChange={handleAssociationChange} className="w-250">
                 <option value="konexio">Konexio</option>
                 <option value="unicef">UNICEF</option>
                 <option value="les-restos-du-coeur">Les restos du coeur</option>
             </select>
-            <button type="input" >Envoyer</button>
+            <button type="input" className="w-250">Envoyer</button>
          </form>
          </>
          

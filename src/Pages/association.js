@@ -33,20 +33,23 @@ const Association = () =>{
         <>
             <h1>Association</h1>
             {association && <Card association={association}/>}
-            <section>
-             {/* eslint-disable-next-line */}
-            {messages.map((message=>{
-                if (message.association === slug){
-                    return <article key={message.date}>
-                    <h2>{message.object}</h2>
-                    <p>{message.content}</p>
-                    <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p>
-                </article>
-                }
-            }))}
+            <section className="textecenter">
+                <h2>messages</h2>
+                {/* eslint-disable-next-line */}
+                {messages.map((message=>{
+                    if (message.association === slug){
+                        return <article key={message.date}>
+                        <h3>{message.object}</h3>
+                        <p>{message.content}</p>
+                        <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p> 
+                    </article>
+                    }
+                }))}
             </section>
 
-            <Link to={"/Contact"}><button>Envoyer un message</button></Link>
+            <section className="flex jcc m-t-50">
+                <Link to={"/Contact"}><button>Envoyer un message</button></Link>
+            </section>
         </>
     )
 }

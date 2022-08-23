@@ -7,8 +7,7 @@ const Nav = () =>{
     const navigate = useNavigate()
 
     const handleAdminClick = () =>{
-        console.log("block");
-        setDisplay("block")
+        setDisplay("flex")
     }
 
     const handlePasswordChange = e =>{
@@ -19,7 +18,6 @@ const Nav = () =>{
         e.preventDefault()
 
         if(password === "Admin"){
-            console.log("true");
             navigate('/admin')
         }
 
@@ -29,12 +27,12 @@ const Nav = () =>{
 
     return(
         <>
-        <nav>
+        <nav className="flex g-20 aic">
             <Link to={"/"}>Home</Link>
             <Link to={"/Contact"}>Contact</Link>
-            <button onClick={handleAdminClick}>Admin</button>
+            <button onClick={handleAdminClick} className="btn-nav">Admin</button>
         </nav>
-        <form onSubmit={handleSubmit} style={{
+        <form onSubmit={handleSubmit} className="passwordform clmn g-20" style={{
             "display":`${display}`
         }}>
             <label htmlFor="password">Password</label>
