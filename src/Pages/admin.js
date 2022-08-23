@@ -34,41 +34,32 @@ const Admin = () =>{
         <h1>Admin</h1>
         <section className="textecenter">
             <h2>Konexio</h2>
-             {/* eslint-disable-next-line */}
-            {messages.map((message=>{
-                if (message.association === "konexio"){
+            {messagesKonexio.map((message=>{
                     return <article key={message.date}>
                     <h3>{message.object}</h3>
                     <p>{message.content}</p>
                     <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p>
                 </article>
-                }
             }))}
         </section>
         <section className="textecenter">
             <h2>UNICEF</h2>
-             {/* eslint-disable-next-line */}
-            {messages.map((message=>{
-                if (message.association === "unicef"){
+            {messagesUnicef.map((message=>{
                     return <article key={message.date}>
                     <h3>{message.object}</h3>
                     <p>{message.content}</p>
                     <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p>
                 </article>
-                }
             }))}
         </section>
         <section className="textecenter">
             <h2>Les restos du coeur</h2>
-             {/* eslint-disable-next-line */}
-            {messages.map((message=>{
-                if (message.association === "les-restos-du-coeur"){
+            {messagesRestos.map((message=>{
                     return <article key={message.date}>
                     <h3>{message.object}</h3>
                     <p>{message.content}</p>
                     <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p>
                 </article>
-                }
             }))}
         </section>
 
