@@ -34,35 +34,34 @@ const Admin = () =>{
         <h1>Admin</h1>
         <section className="textecenter">
             <h2>Konexio</h2>
-            {messagesKonexio.map((message=>{
+           {messagesKonexio.length>0 ?  <>{messagesKonexio.map((message=>{
                     return <article key={message.date}>
                     <h3>{message.object}</h3>
                     <p>{message.content}</p>
                     <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p>
                 </article>
-            }))}
+            }))} </>: <p>Pas de message</p> }
         </section>
         <section className="textecenter">
             <h2>UNICEF</h2>
-            {messagesUnicef.map((message=>{
+            {messagesUnicef.length>0 ?  <>{messagesUnicef.map((message=>{
                     return <article key={message.date}>
                     <h3>{message.object}</h3>
                     <p>{message.content}</p>
                     <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p>
                 </article>
-            }))}
+            }))} </>: <p>Pas de message</p> }
         </section>
         <section className="textecenter">
             <h2>Les restos du coeur</h2>
-            {messagesRestos.map((message=>{
+            {messagesRestos.length>0 ?  <>{messagesRestos.map((message=>{
                     return <article key={message.date}>
                     <h3>{message.object}</h3>
                     <p>{message.content}</p>
                     <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p>
                 </article>
-            }))}
+            }))} </>: <p>Pas de message</p> }
         </section>
-
 
         </>
     )

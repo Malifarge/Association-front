@@ -36,7 +36,7 @@ const Nav = () =>{
             "display":`${display}`
         }}>
             <label htmlFor="password">Password</label>
-            <input type="text" name="password" onChange={handlePasswordChange} value={password}/>
+            <input type="password" name="password" onChange={handlePasswordChange} value={password}/>
             <button type="submit">valider</button>
         </form>
         </>
