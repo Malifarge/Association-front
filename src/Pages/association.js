@@ -26,7 +26,10 @@ const Association = () =>{
     const fetchmessages = async() =>{
         const response = await fetch("http://localhost:5000/messages")
         const data = await response.json()
-        setMessages(data)
+        const filtData = data.filter((d)=>{
+          return  d.association===slug
+        })
+        setMessages(filtData)
     }
 
     return (
@@ -35,16 +38,20 @@ const Association = () =>{
             {association && <Card association={association}/>}
             <section className="textecenter">
                 <h2>messages</h2>
-                {/* eslint-disable-next-line */}
+                {messages.length>0 ? <>
                 {messages.map((message=>{
-                    if (message.association === slug){
-                        return <article key={message.date}>
-                        <h3>{message.object}</h3>
-                        <p>{message.content}</p>
-                        <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p> 
-                    </article>
-                    }
+
+                return <article key={message.date}>
+                <h3>{message.object}</h3>
+                <p>{message.content}</p>
+                <p>{moment(message.date).format("DD/MM/YYYY à hh:mm:ss")}</p> 
+                </article>
+
                 }))}
+                </>
+                :
+                <p>Pas de message</p> }
+
             </section>
 
             <section className="flex jcc m-t-50">
