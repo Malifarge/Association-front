@@ -2,7 +2,10 @@ import { useState, useEffect } from "react"
 import moment from "moment"
 
 const Admin = () =>{
-    const [messages,setMessages] = useState([])
+    const [messagesKonexio,setMessagesKonexio] = useState([])
+    const [messagesUnicef,setMessagesUnicef] = useState([])
+    const [messagesRestos,setMessagesRestos] = useState([])
+
 
     useEffect(()=>{
         fetchmessages()
@@ -11,7 +14,19 @@ const Admin = () =>{
     const fetchmessages = async() =>{
         const response = await fetch("http://localhost:5000/messages")
         const data = await response.json()
-        setMessages(data)
+        const filtDataKonexio = data.filter((d)=>{
+            return  d.association==="konexio"
+          })
+          const filtDataUnicef = data.filter((d)=>{
+            return  d.association==="unicef"
+          })
+          const filtDataRestos = data.filter((d)=>{
+            return  d.association==="les-restos-du-coeur"
+          })
+
+        setMessagesKonexio(filtDataKonexio)
+        setMessagesRestos(filtDataRestos)
+        setMessagesUnicef(filtDataUnicef)
     }
 
     return (
