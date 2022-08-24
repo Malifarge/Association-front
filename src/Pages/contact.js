@@ -46,7 +46,7 @@ const Contact = () =>{
             <input type="text" required name="object" className="w-250" value={object} onChange={handleObjectChange}/>
             <label htmlFor="content">message</label>
             <textarea name="content" required className="w-250 h-200" value={content} onChange={handleContentChange}/>
-            <select onChange={handleAssociationChange} className="w-250">
+            <select onChange={handleAssociationChange} required className="w-250">
                 <option value="">Choisir une association</option>
                 <option value="konexio">Konexio</option>
                 <option value="unicef">UNICEF</option>
