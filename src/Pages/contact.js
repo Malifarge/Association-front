@@ -5,7 +5,7 @@ const Contact = () =>{
 
     const [object,setObject] =useState("")
     const [content,setContent]=useState("")
-    const [association,setAssociation]=useState("konexio")
+    const [association,setAssociation]=useState("")
 
     const handleObjectChange = e =>{
         setObject(e.target.value)
@@ -47,6 +47,7 @@ const Contact = () =>{
             <label htmlFor="content">message</label>
             <textarea name="content" className="w-250 h-200" value={content} onChange={handleContentChange}/>
             <select onChange={handleAssociationChange} className="w-250">
+                <option value="">Choisir une association</option>
                 <option value="konexio">Konexio</option>
                 <option value="unicef">UNICEF</option>
                 <option value="les-restos-du-coeur">Les restos du coeur</option>
