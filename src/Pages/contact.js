@@ -43,9 +43,9 @@ const Contact = () =>{
          <h1>Contact</h1>
          <form onSubmit={handleSubmit} className="flex clmn g-20 aic">
             <label htmlFor="object">Objet</label>
-            <input type="text" name="object" className="w-250" value={object} onChange={handleObjectChange}/>
+            <input type="text" required name="object" className="w-250" value={object} onChange={handleObjectChange}/>
             <label htmlFor="content">message</label>
-            <textarea name="content" className="w-250 h-200" value={content} onChange={handleContentChange}/>
+            <textarea name="content" required className="w-250 h-200" value={content} onChange={handleContentChange}/>
             <select onChange={handleAssociationChange} className="w-250">
                 <option value="">Choisir une association</option>
                 <option value="konexio">Konexio</option>
