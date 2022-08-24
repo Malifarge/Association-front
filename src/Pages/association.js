@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { useParams,Link } from "react-router-dom"
+import { useParams,Link,useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Card from "../components/Card"
 import moment from "moment"
@@ -12,6 +12,8 @@ const Association = () =>{
     const [association,setassociation] = useState(null)
     const [messages,setMessages] =useState([])
 
+    const navigate = useNavigate()
+
     useEffect(()=> {
         fetchassociation()
         fetchmessages()
@@ -21,6 +23,9 @@ const Association = () =>{
         const response = await fetch(`http://localhost:5000/associations/${slug}`)
         const data = await response.json()
         setassociation(data)
+        if(!data.image){
+            navigate('*')
+        }
     }
 
     const fetchmessages = async() =>{

@@ -7,6 +7,7 @@ import Association from './Pages/association';
 import Admin from './Pages/admin';
 import Contact from './Pages/contact';
 import Nav from './components/nav';
+import NotFound from './Pages/notfound';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path='/:slug' element={<Association />}/>
         <Route path='/admin' element={<Admin />}/>
         <Route path='/Contact' element={<Contact />}/>
+        <Route path='*' element={<NotFound />}/>
+
 
       </Routes>
     </BrowserRouter>
